@@ -1,0 +1,42 @@
+#the first way
+
+raw=input()  
+a,b=raw.split()  
+    
+Sum = list(str(int(a)+int(b)))
+
+count=len(Sum)//3
+while count>0:
+    Sum.insert(-3*count,',')
+    count-=1
+
+if Sum[0]=='-'and Sum[1]==',':
+    Sum.remove(',')
+if Sum[0]==',':
+    Sum.remove(',')
+for item in Sum:
+    print(item,end='')
+    
+ 
+ #the second way
+ 
+raw=input()
+a,b=raw.split()
+sum=list(str(int(a)+int(b)))
+sum.reverse()
+lists=list()
+count=0
+for item in sum:
+  if count<3:
+    lists.append(item)
+    count+=1
+  else:
+    lists.append(",")
+    lists.append(item)
+    count=1
+if lists[-1]=='-'and lists[-2]==',':
+  lists.pop()
+  lists[-1]='-'
+lists.reverse()
+for i in lists:  
+    print(i,end="")  
